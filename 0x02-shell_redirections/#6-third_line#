@@ -1,0 +1,4 @@
+#!/bin/bash
+grep -B 3 -1 0 foo incta
+
+
