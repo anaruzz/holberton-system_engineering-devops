@@ -1,2 +1,2 @@
 #!/bin/bash
-ls -lra |wc-l
+find ./* -type d | wc -l
