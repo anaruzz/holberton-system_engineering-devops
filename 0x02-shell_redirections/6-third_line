@@ -1,2 +1,3 @@
 #!/bin/bash
-awk 'FNR==3 {print}' incta
+awk 'NR==3′ incta
+
