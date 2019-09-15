@@ -1,3 +1,4 @@
 #!/bin/bash
-awk 'NR==3′ incta
+grep -B 3 -A 0 foo incta
+
 
