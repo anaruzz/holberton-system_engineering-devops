@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # This script is displaying "Holberton School" 10 times
-((i))
-for i in {1..10}
+list="$(ls)"
+for i in $list
 do
-  echo 'Holberton School'
+  echo "$i"
 done
