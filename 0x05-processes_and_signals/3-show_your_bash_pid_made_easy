@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# a Bash script that displays process names with bash word in them
+# shellcheck disable=SC2009
+pgrep -l bash
