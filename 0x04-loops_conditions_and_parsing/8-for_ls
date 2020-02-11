@@ -4,5 +4,5 @@
 list="$(ls)"
 for l in $list
 do
-echo $l | sed -e "s/[0-9-]//g"
+echo $l | cut -d "-" -f2
 done
