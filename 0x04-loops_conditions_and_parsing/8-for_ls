@@ -1,5 +1,5 @@
-# This script is displaying "Holberton School" 10 times
 #!/usr/bin/env bash
+# This script is displaying "Holberton School" 10 times
 list="$(ls)"
 for l in $list
 do
