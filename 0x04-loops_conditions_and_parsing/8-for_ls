@@ -1,7 +1,7 @@
-#!/usr/bin/env bash
 # This script is displaying "Holberton School" 10 times
+#!/usr/bin/env bash
 list="$(ls)"
-for i in $list
+for l in $list
 do
-  echo "$i"
+echo $l | sed -e "s/[0-9-]//g"
 done
