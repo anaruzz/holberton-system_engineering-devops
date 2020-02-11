@@ -4,5 +4,5 @@
 list="$(ls)"
 for l in $list
 do
-echo $l | cut -d "-" -f2
+echo "$l" | cut -d "-" -f2
 done
