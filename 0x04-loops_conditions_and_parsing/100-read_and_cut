@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #this script displays infos from the /etc/passwd file
 file="/etc/passwd"
-while IFS=: read line
+while IFS=: read -r line
 do
-echo $line | cut -d ':' -f 1,3,6
+echo "$line" | cut -d ':' -f 1,3,6
 done < "$file"
