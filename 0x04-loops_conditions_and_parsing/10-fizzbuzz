@@ -4,16 +4,16 @@ for i in {1..100}
 do
   c=$i%5
   t=$i%3
-if [[ $c -eq 0 ]] && [[ $t -eq 0 ]]
+if [[ $c -eq "0" ]] && [[ $t -eq "0" ]]
 then
 echo "FizzBuzz"
-elif [[ $t -eq 0 ]]
+elif [[ $t -eq "0" ]]
   then
   echo "Fizz"
-elif [[ $c -eq 0 ]]
+elif [[ $c -eq "0" ]]
 then
   echo "Buzz"
 else
-  echo $i
+  echo "$i"
 fi
 done
