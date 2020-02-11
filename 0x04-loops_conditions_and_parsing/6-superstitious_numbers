@@ -5,7 +5,7 @@ while [ $i -le 20 ]
 do
   if [ $i -eq 5 ]
   then
-    echo 'bad luck from china'
+    echo 'bad luck from China'
   else
     if [ $i -eq 10 ]
     then
