@@ -1,9 +1,10 @@
 # This script is displaying "Holberton School" 10 times
 #!/usr/bin/env bash
-for i in {1..100}
+x=1
+while [ $x -lt 101 ]
 do
-  c=$i%5
-  t=$i%3
+  c=$x%5
+  t=$x%3
 if [[ $c -eq "0" ]] && [[ $t -eq "0" ]]
 then
 echo "FizzBuzz"
@@ -14,6 +15,7 @@ elif [[ $c -eq "0" ]]
 then
   echo "Buzz"
 else
-  echo "$i"
+  echo "$x"
 fi
+x=$((x+1))
 done
