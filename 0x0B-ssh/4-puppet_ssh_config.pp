@@ -1,6 +1,6 @@
 # Changes SSH config file
-file_line {'~/.ssh/config':
+file {'~/.ssh/holberton':
 ensure  => 'present',
-path    => '~/.ssh/config',
-mode    => '0744',
-content => 'Host 35.237.161.240\nUser ubuntu\IdentityFile ~/.ssh/holberton\nPasswordAuthentication no'
+path    => '/etc/ssh/ssh_config',
+content => 'Host 35.237.161.240\nUser ubuntu\IdentityFile ~/.ssh/holberton\nPasswordAuthentication no',
+}
