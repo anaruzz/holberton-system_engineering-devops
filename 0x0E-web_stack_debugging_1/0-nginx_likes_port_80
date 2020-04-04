@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# A script that debugs an nginx server that is refusing a connection on port 80
+
+
+cd /etc/nginx/sites-enabled
+sed -i 's/8080 default/80 default/' default
+
+sudo service nginx reload
+sudo service nginx restart
