@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+# Script that installs nginx and redirects user to another page
+
+# update apt packages and install nginx
+sudo apt-get update
+sudo apt-get install -y nginx
+sudo service nginx start
+
+echo "Ceci n'est pas une page" | sudo tee /var/www/html/custom_404.html
+new_config="\\\n\terror_page 404 /custom_404.html;\n"
+file="/etc/nginx/sites-enabled/default"
+sudo sed -i "43i $new_config" $file
+sudo service nginx restart
