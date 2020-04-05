@@ -6,4 +6,7 @@ sudo apt-get update
 sudo apt-get install -y nginx
 
 # change the default nginx index.html to display a string
+sudo ufw allow 'Nginx HTTP'
+sudo chmod +rw /usr/share/nginx/html/index.html
 sudo echo "Holberton School" > /usr/share/nginx/html/index.html
+sudo service nginx start
