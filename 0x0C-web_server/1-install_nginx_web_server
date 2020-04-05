@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# Install nginx and display string
+
+# update apt packages and install nginx
+sudo apt-get update
+sudo apt-get install -y nginx
+
+# change the default nginx index.html to display a string
+sudo echo "Holberton School" > /usr/share/nginx/html.index.html
