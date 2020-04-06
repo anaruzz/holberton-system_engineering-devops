@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Script that debugs an nginx server that is refusing a connection on port 80
-sed -i 's/8080 default/80 default/' /etc/nginx/sites-enabled/default
+sed -i 's/8080/80/' /etc/nginx/sites-enabled/default
 sudo service nginx restart
 sed -i 's/.*/666/' /run/nginx.pid
