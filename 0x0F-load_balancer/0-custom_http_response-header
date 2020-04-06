@@ -9,4 +9,4 @@ sudo service nginx start
 host=$(cat /etc/hostname)
 nl="\\\tadd_header X-Served-By \"$host\";"
 sudo sed -i -e "/sendfile/i $nl" /etc/nginx/nginx.conf
-sudo service nginx reload
+sudo service nginx restart
