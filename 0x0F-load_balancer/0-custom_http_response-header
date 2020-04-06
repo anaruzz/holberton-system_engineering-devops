@@ -10,6 +10,7 @@ sudo ufw allow 'Nginx HTTP'
 sudo chmod +rw /var/www/html/index.nginx-debian.html
 sudo echo "Holberton School" > /var/www/html/index.nginx-debian.html
 
+sudo service nginx start
 nl="\\\tadd_header X-Served-By \$hostname;"
 sudo sed -i -e "/sendfile/i $nl" /etc/nginx/nginx.conf
 sudo service nginx reload
