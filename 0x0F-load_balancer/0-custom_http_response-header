@@ -2,11 +2,8 @@
 # Install nginx and display string
 
 # update apt packages and install nginx
-sudo apt-get update
-sudo apt-get install -y nginx
-
-sudo service nginx start
 host=$(cat /etc/hostname)
-nl="\\\tadd_header X-Served-By \"$host\";"
-sudo sed -i -e "/sendfile/i $nl" /etc/nginx/nginx.conf
-sudo service nginx reload
+new_config="\\\tadd_header X-Served-By \"$host\";"
+file='/etc/nginx/nginx.conf'
+sudo sed -i "15i $new_config" $file
+sudo service nginx restart
