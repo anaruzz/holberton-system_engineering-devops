@@ -1,6 +1,7 @@
-# Script that Installs and configures HAproxy
+# Script that Installs and configures nginx
 
-package {'install nginx':
+
+package { 'nginx':
 ensure => present,
 }
 
