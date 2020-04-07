@@ -2,7 +2,7 @@
 # Install Haproxy and configure it
 
 # enable a dedicated PPA
-sudo apt-get install software-properties-common
+sudo apt-get -y install software-properties-common
 sudo add-apt-repository ppa:vbernat/haproxy-1.8
 
 #update all packages on a machine & install haproxy
