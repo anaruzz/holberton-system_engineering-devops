@@ -11,5 +11,5 @@ ensure  => running,
 
 exec {'configure and restart':
 provider => shell,
-command  => 'host=$(hostname); sudo sed -i -e "/sendfile/i \\\tadd_header X-Served-By \"$host\";" /etc/nginx/nginx.conf && sudo service nginx restart',
+command  => 'host=$(hostname);nl="\\\tadd_header X-Served-By \"$host\";";sudo sed -i -e "/sendfile/i $nl" /etc/nginx/nginx.conf;sudo service nginx restart',
 }
