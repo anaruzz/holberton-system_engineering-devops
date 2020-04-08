@@ -3,7 +3,7 @@
 
 # update apt packages and install nginx
 sudo apt-get -y update
-sudo apt-get install -y nginx
+sudo apt-get -y install nginx
 sudo service nginx start
 
 echo "Ceci n'est pas une page" | sudo tee /var/www/html/custom_404.html
