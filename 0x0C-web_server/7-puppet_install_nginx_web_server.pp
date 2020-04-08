@@ -19,11 +19,7 @@ command => 'sudo service nginx start',
 }
 
 #place redirect function
-$new_config = "\trewrite \^\/redirect_me\/\$ https:\/\/www.youtube.com\/watch\?v=QH2-TGUlwu4 permanent\;"
-$conf_file = "/etc/nginx/sites-enabled/default"
-$server = "0,/server\s+\{/s//& \n"
-
 exec {'redirect_me':
 provier => shell,
-command => 'sudo sed -i -E "${server}${new_config}/" $conf_file',
+command => 'sudo sed -i "s/server_name _;/server_name _;\n\trewrite ^\/redirect_me https:\/\/watch\?v=QH2-TGUlwu4 permanent;/" /etc/nginx/sites-available/default ; sudo service nginx start',
 }
