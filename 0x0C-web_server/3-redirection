@@ -2,11 +2,13 @@
 # Script that installs nginx and redirects user to another page
 
 # update apt packages and install nginx
-sudo apt-get -y update
-sudo apt-get install -y nginx
+sudo apt-get update
+sudo apt-get -y install nginx
 
 # place redirect function
 new_config="\trewrite \^\/redirect_me\/\$ https:\/\/www.youtube.com\/watch\?v=QH2-TGUlwu4 permanent\;"
 conf_file="/etc/nginx/sites-enabled/default"
 server="0,/server\s+\{/s//& \n"
 sudo sed -i -E "${server}${new_config}/" $conf_file
+
+sudo service nginx restart
