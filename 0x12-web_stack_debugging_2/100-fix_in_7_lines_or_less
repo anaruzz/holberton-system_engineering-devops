@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Script that Changes the configuration of nginx and apache2 to run as the user nginx
+sed -i 's/80 default/8080 default/' /etc/nginx/sites-enabled/default
+pkill apache2
+chmod +r /etc/nginx/nginx.conf
+sudo -u nginx service nginx restart
