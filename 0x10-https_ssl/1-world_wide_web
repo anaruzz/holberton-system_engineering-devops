@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# Script thet displays info about subdomains of a website
+
+printing() {
+    echo "The subdomain $1 is a $2 record and points to $3"
+}
