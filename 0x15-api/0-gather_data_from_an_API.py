@@ -1,9 +1,11 @@
 #!/usr/bin/python3
-# Script that gathers to do data from an api
+"""
+Script that gathers to do data from an api
+"""
+
 if __name__ == '__main__':
     import requests
     import sys
-
 
     user_id = sys.argv[1]
     url = 'https://jsonplaceholder.typicode.com/users/'
