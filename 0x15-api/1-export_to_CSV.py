@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Script that gathers to do data from an api
+Script that gathers to do data from an api and exports it to a csv file
 """
 
 if __name__ == '__main__':
@@ -18,9 +18,11 @@ if __name__ == '__main__':
         to_do = requests.get(url + '{}/todos'.format(user_id)).json()
         with open(file_name, 'w', encoding='utf-8') as csvfile:
             fieldnames = ['employee_id', 'name', 'task_status', 'title']
-            writer = csv.DictWriter(csvfile, fieldnames=fieldnames,
-                                quoting=csv.QUOTE_ALL)
+            writer = csv.writer(csvfile, quoting=csv.QUOTE_ALL)
             for row in to_do:
-                writer.writerow({'employee_id': user_id, 'name': employee_name,
-                                'task_status': row.get('completed'),
-                                'title': row.get('title')})
+                writer.writerow([
+                    int(user_id),
+                    content.get('username', ''),
+                    row.get('completed', False),
+                    row.get('title', '')
+                ])
