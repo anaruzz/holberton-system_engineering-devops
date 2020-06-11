@@ -9,9 +9,9 @@ if __name__ == '__main__':
 
     user_id = sys.argv[1]
     url = 'https://jsonplaceholder.typicode.com/users/'
-    response = requests.get("{}/{}".format(url, user_id), verify=False)
-    if response.status_code == 200:
-        content = response.json()
+    req = requests.get("{}/{}".format(url, user_id), verify=False)
+    if req.status_code == 200:
+        content = req.json()
         employee_name = content.get('name')
         total_tasks = 0
         done_tasks = []
