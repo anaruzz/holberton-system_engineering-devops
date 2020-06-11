@@ -17,7 +17,7 @@ if __name__ == '__main__':
         all_data = {}
         for user in content:
             user_id = user.get('id', 1)
-            all_data[user_id] = []
+            all_data[str(user_id)] = []
             to_do = requests.get(url + '{}/todos'.format(user_id)).json()
             for row in to_do:
                 user_data = {}
