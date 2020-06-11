@@ -25,7 +25,7 @@ if __name__ == '__main__':
             data = {}
             data["task"] = row.get('title')
             data["completed"] = row.get('completed')
-            data["username"] = content.get('username')
+            data["username"] = row.get('username')
             output[user_id].append(data)
 
         with open(file_name, 'w', encoding='utf-8') as jf:
