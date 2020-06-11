@@ -12,8 +12,6 @@ if __name__ == '__main__':
     if len(sys.argv) < 2:
         print('Usage: {} EMPLOYEE_ID'.format(argv[0]))
         exit()
-
-
     user_id = sys.argv[1]
     file_name = '{}.json'.format(user_id)
     url = 'https://jsonplaceholder.typicode.com/users/'
