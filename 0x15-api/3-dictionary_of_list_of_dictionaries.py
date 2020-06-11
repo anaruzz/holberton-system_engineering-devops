@@ -17,7 +17,7 @@ if __name__ == '__main__':
         all_data = {}
         for user in content:
             user_id = user.get('id', 1)
-            all_data[str(user_id)] = []
+            all_data[user_id] = []
             to_do = requests.get(url + '{}/todos'.format(user_id)).json()
             for row in to_do:
                 user_data = {}
@@ -25,6 +25,5 @@ if __name__ == '__main__':
                 user_data["completed"] = row.get('completed')
                 user_data["username"] = user.get('username')
                 all_data[user_id].append(user_data)
-        print(all_data)
-        # with open(file_name, 'w', encoding='utf-8') as jf:
-        #     json.dump(output, jf)
+        with open(file_name, 'w', encoding='utf-8') as jf:
+            json.dump(all_data, jf)
