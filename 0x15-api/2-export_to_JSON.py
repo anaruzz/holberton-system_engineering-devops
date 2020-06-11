@@ -20,7 +20,6 @@ if __name__ == '__main__':
     response = requests.get("{}/{}".format(url, user_id), verify=False)
     if response.status_code == 200:
         content = response.json()
-        employee_name = content.get('name')
         to_do = requests.get(url + '{}/todos'.format(user_id)).json()
         output = {}
         output[user_id] = []
@@ -28,8 +27,8 @@ if __name__ == '__main__':
             data = {}
             data["task"] = row.get('title')
             data["completed"] = row.get('completed')
-            data["username"] = employee_name
+            data["username"] = content.get('username')
             output[user_id].append(data)
 
-        with open(file_name, 'w', encoding='utf-8') as jsonfile:
-            json.dumps(output)
+        with open(file_name, 'w', encoding='utf-8') as jf:
+            json.dump(output, jf)
