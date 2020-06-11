@@ -7,6 +7,10 @@ if __name__ == '__main__':
     import requests
     import sys
 
+    if len(argv) < 2:
+        print('Usage: {} EMPLOYEE_ID'.format(argv[0]))
+        exit()
+
     user_id = sys.argv[1]
     url = 'https://jsonplaceholder.typicode.com/users/'
     req = requests.get("{}/{}".format(url, user_id), verify=False)

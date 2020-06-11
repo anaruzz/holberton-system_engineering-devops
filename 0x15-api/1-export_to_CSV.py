@@ -8,6 +8,10 @@ if __name__ == '__main__':
     import requests
     import sys
 
+    if len(sys.argv) < 2:
+        print('Usage: {} EMPLOYEE_ID'.format(argv[0]))
+        exit()
+
     user_id = sys.argv[1]
     file_name = '{}.csv'.format(user_id)
     url = 'https://jsonplaceholder.typicode.com/users/'
