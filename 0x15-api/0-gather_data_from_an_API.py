@@ -7,7 +7,7 @@ if __name__ == '__main__':
     import requests
     import sys
 
-    if len(argv) < 2:
+    if len(sys.argv) < 2:
         print('Usage: {} EMPLOYEE_ID'.format(argv[0]))
         exit()
 
