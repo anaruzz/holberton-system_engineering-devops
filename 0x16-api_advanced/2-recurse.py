@@ -9,7 +9,7 @@ import requests
 
 
 def recurse(subreddit, hot_list=[], after=None):
-    url = 'https://www.reddit.com/r/{}/.json?after={}'.format(subreddit, after)
+    url = "https://api.reddit.com/r/{}/hot?after={}".format(subreddit, after)
     headers = {
             'user-agent': 'my custom user agent 1.0'
     }
