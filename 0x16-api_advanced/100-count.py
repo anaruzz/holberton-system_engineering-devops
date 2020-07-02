@@ -17,7 +17,7 @@ def count_words(subreddit, word_list, word_dic={}, after=""):
                 print("{}: {}".format(word[0], word[1]))
         return None
 
-    url ="https://www.reddit.com/r/{}/hot/.json".format(subreddit)
+    url = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
     params = {
         'limit': 100,
         'after': after
@@ -44,7 +44,7 @@ def count_words(subreddit, word_list, word_dic={}, after=""):
             for w in word_list:
                 word_dic[w] += lower.count(w.lower())
 
-    except:
+    except Exception as e:
         return None
 
     count_words(subreddit, word_list, word_dic, after)
