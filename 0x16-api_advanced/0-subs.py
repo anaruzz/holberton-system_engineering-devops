@@ -1,11 +1,11 @@
 #!/usr/bin/python3
 """
-Script that gathers to do data from an api
+Script that queries the Reddit API and
+returns the number of subscribers
 """
 
 
 import requests
-import sys
 
 
 def number_of_subscribers(subreddit):
