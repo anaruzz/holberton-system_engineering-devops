@@ -14,7 +14,7 @@ def recurse(subreddit, hot_list=[], after=None):
             'user-agent': 'my custom user agent 1.0'
     }
     response = requests.get(url, headers=headers)
-    data = response.json().get('data', None)
+    data = response.json().get('data')
     if data is None:
         return None
     hot_list += data.get('children', [])
