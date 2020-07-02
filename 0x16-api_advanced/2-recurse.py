@@ -18,7 +18,7 @@ def recurse(subreddit, hot_list=[], after=None):
     if data is None:
         return None
     hot_list += data.get('children', [])
-    after = data.get('after, None')
+    after = data.get('after', None)
     if after:
         return recurse(subreddit, hot_list, after)
     else:
